@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,ul,li{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+     .wheel{
+         width: 800px;
+         height: 200px;
+         position: relative;
+         margin: auto;
+         overflow: hidden;
+     }
+     .wheel li{
+         float: left;
+         width: 200px;
+         height: 200px;
+     }
+     .wheel li a{
+         display: block;
+         border: none;
+         width: 180px;
+         height: 200px;
+         margin: auto;
+     }
+     .wheel li a img{
+         width: 100%;
+         height: 100%;
+     }
+     .box{
+         width: 800px;
+         height: 200px;
+         margin: auto;
+         position: relative;
+     }
+     .left{
+        position: absolute;
+        left: -50px;
+        font-size: 60px;
+        height: 100%;
+        line-height:210px ;
+
+     }
+     .right{
+        position: absolute;
+       right: -50px;
+       font-size: 60px;
+       height: 100%;
+       line-height:210px ;
+
+     }
+     .wheelbox{
+         width: 800px;
+         height: 200px;
+         position: relative;
+         margin: auto;
+         overflow: hidden;
+     }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="left">&lt;</div>
+        <div class="right">&gt;</div>
+        <div class="wheelbox">
+   <ul class="wheel">
+       <li>
+          <a href="">
+              <img src="img/1.png" alt="">
+          </a> 
+       </li>
+       <li>
+        <a href="">
+            <img src="img/2.png" alt="">
+        </a> 
+     </li>
+     <li>
+        <a href="">
+            <img src="img/3.png" alt="">
+        </a> 
+     </li>
+     <li>
+        <a href="">
+            <img src="img/4.png" alt="">
+        </a> 
+     </li>
+     <li>
+        <a href="">
+            <img src="img/5.png" alt="">
+        </a> 
+     </li>
+     <li>
+        <a href="">
+            <img src="img/6.png" alt="">
+        </a> 
+     </li> 
+   </ul> 
+   </div>
+   </div>
+   <script src="animate.js"></script>
+   <script>
+       var wheel=document.querySelector(".wheel");
+       var num=wheel.childElementCount;
+       wheel.style.width=num*200+"px";
+       var left=document.querySelector(".left");
+       var right=document.querySelector(".right");
+       wheel.onmouseover=function(){
+        clearInterval(t);
+       }
+       wheel.onmouseout=function(){
+           
+           t=setInterval(move,3000)
+       }
+      //左边
+        left.onclick=function(){
+           animate(wheel,{
+               marginLeft:-200
+           },300,Tween.Linear,function () {
+            wheel.appendChild(wheel.
+            firstElementChild);
+            wheel.style.marginLeft=0;
+           })
+        }
+        //右边
+        right.onclick=function(){
+            wheel.insertBefore(wheel.
+            lastElementChild,wheel.firstElementChild);
+            wheel.style.marginLeft="-200px";
+           animate(wheel,{
+               marginLeft:0
+           },300,Tween.Linear);  
+           
+        }
+       //自己动
+     function move(){
+           animate(wheel,{
+               marginLeft:-200
+           },300,Tween.Linear,function () {
+            wheel.appendChild(wheel.
+            firstElementChild);
+            wheel.style.marginLeft=0;
+           })
+        }
+        var t=setInterval(move,3000)
+   </script>
+</body>
+</html>

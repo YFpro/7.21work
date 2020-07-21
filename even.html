@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: firebrick;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+<script>
+//基于对象的，基于事件的弱类型的解释性语言
+//事件鼠标事件键盘事件浏览器自带的事件
+//程序能和用户进行交互
+/*
+鼠标事件
+click单击点击
+dblclick双击
+mouseover鼠标在...之上
+mouseout鼠标离开..
+mousedown按下鼠标左键
+mouseup按下鼠标右键
+mousemove当鼠标移动
+键盘事件
+
+键盘按下
+键盘抬起
+
+浏览器自带事件
+ onload   onscroll  
+事件四部分组成
+1.目标对象 事件源
+2.事件 （交互）
+3.事件处理程序
+4.事件对象
+
+如何注册
+1.直接量
+var box=document.querySelector(".box");
+box.onclick=function(){
+    alert("呵呵");
+}
+2.通过标准方式addEventListener
+var div=document.querySelector( ".one");
+div.addEventListener( "mousedown" , function()i
+console.log( "down");
+l,false)//面试笔试true
+div.addEventListener( "mouseup" , function({
+console.log("up" );I
+,false)
+div.addEventListener( "click" , function({
+console.log( "click");
+},false)
+3.混排
+
+两种注册事件方式的优劣
+1，通过直接量的方式定义事件，同一个事件只能有同一个事件处理程序，否则后面，会将前面的事件覆盖
+2．通过标准的定义事件的方式，可以让同一个事件执行不同的事件处理程
+3．通过直接量的方式定义的时间，通过直接量=null的方式，来注销事件
+4.通过标准方式定义的事件，通过removeEventListener注销事件，但是在注册事件的时候，事件处理函数(程序)，必须得有名字，否则无法注销
+*/
+
+   </script> 
+</body>
+</html>

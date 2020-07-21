@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   div{
+       width: 200px;
+       height: 200px;
+       background: firebrick;
+   }      
+</style>
+<body>
+<div></div>
+<script>
+//当我点击的时候，我想获取一下鼠标的位置->事件对象->什么地方
+// 事件处理程序的第一个参数
+
+
+// 鼠标事件的事件对象
+// 1.鼠标相对于屏幕的距离
+// 2．鼠标相对于浏览器的距离
+// 3.相对于事件源的距离
+// 4.获得事件源
+var div=document.querySelector("div");
+div.onclick=function(ev){
+console.log(ev.screenX);
+console.log(ev.screenY);
+
+console.log(ev.clientX);
+console.log(ev.clientY);
+
+console.log(ev.offsetX);
+console.log(ev.offsetY);
+
+console.log(ev.target);
+}
+    </script>
+    
+
+</body>
+</html>
